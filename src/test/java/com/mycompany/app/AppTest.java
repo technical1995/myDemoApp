@@ -3,6 +3,7 @@ package com.mycompany.app;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+import java.util.*;
 /**
  * Unit test for simple App.
  */
@@ -15,7 +16,7 @@ public class AppTest
      * @param testName name of the test case
      */
 		
-    test public AppTest( String testName )
+    public AppTest( String testName )
     {
         super( testName );
     }
@@ -23,7 +24,7 @@ public class AppTest
     /**
      * @return the suite of tests being tested
      */
-    test public static Test suite()
+    public static Test suite()
     {
         return new TestSuite( AppTest.class );
     }
@@ -31,26 +32,26 @@ public class AppTest
     /**
      * Rigourous Test :-)
      */
-   test public void testApp()
+    public void testApp()
     {
         assertTrue( true );
     }
-    test public void testFound() {
-        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+    public void testFound() {
+        ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
         assertTrue(new App().search(array, 4));
       }
 
-      test public void testNotFound() {
-        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+      public void testNotFound() {
+        ArrayList<Integer> array = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4));
         assertFalse(new App().search(array, 5));
       }
 
-      test public void testEmptyArray() {
-        ArrayList<Integer> array = new ArrayList<>();
+      public void testEmptyArray() {
+        ArrayList<Integer> array = new ArrayList<Integer>();
         assertFalse(new App().search(array, 1));
       }
 
-      test public void testNull() {
+      public void testNull() {
         assertFalse(new App().search(null, 1));
       }
 
